@@ -1,13 +1,19 @@
 # Lab0
 
-This document contains the results of Lab0.
+This document contains the results of Lab0. It includes diagrams that represent the structure and functionality of the system being developed.
 
 ## Use Case Diagram
+This diagram illustrates the interactions between different user roles and the system functionalities they can access.
 ![Diagram](https://www.plantuml.com/plantuml/png/POuzIyP048Jx-nLhPugBVH09H3jHIT0-cb4MxoFixKK4VxmHUVFcOyjdPcUcJjgBPkzC-kH04XECUKuGklwnbkxywE8ti4ADOmHTWIwFa8bJ56DEVhBsXYxlumU7mfmD6_mVH6Mv8AheuV5YFdFuQGIzWgxe5WuA-gilTdKlZ2zwalZE3fluhL9HYwJ2RufXlxZBhvvrDenHzBYynJGdBNADC6JlVW40)
 
 ## Class Diagram
+This diagram outlines the classes in the system, including their attributes and methods, showing the structure of the system.
 ![Diagram](https://www.plantuml.com/plantuml/png/XPDBJiCm48RtFeMLLGjA1Di8eKh0WWr2L1p0JOR8me_W6RUgWBiJnqdZK15MdVbjv__cqGsISEIrOlWk3NSMWR5A2KJ-Yk3u9-CyzrtqM9TyIqwQPbICq91gRVVeODti7cWXLI9SAjj8irgNV6Uj0c46pNeAujxAEYXx2OTdPz-aWfFyFN8zw5RP8q1aWo6RyvsnMPGahKar54guOybhwtSA_h0DClgTblG2hNMqSlrFoMDw1dUd91YAQ5KVBuDLLhV279yIUO74mOS7757M8yLal_KjkBr4EqmEJ_aoHWsjSAJ1K4fHEH04OGzMOU0b3s62KuE2v7ooc267MXQRzz_0u-rOKFp2l1YIf7urrT2ybBmM1Dj-ZWJTu_ik3RuD672285garltsttpb-MdV4YbEUHAIlZCsnJoxpdXtcbqLnKKM_r0bryA81f2Dt-rkt8urbZmk6x9XaOeYEHl6Zud5_75iDh8DcDfhzGC0)
 
- 
- ## Object Diagram
- ![Diagram](https://www.plantuml.com/plantuml/png/LP91RzGm48Nl_XLMZaY9aWLnM26qKFLG93Wq804Nv4scNLUs9tWckqJ0VyTslDJ9QVpUw7tZYG_4olDiZS3Z4mmiPmBVoTz2fkfktClgIzjsLHQSiX2a9pov7oD2b2T5T44VEwzbjtiP7R1AcznzW5_AJWQQ0Mqb_eeh3uA82y3Al9uIzpPpC_ETqGF8tce-9IoIPeqkE3q-y4LvaBVkKJi07trIHlbbBr-tuIk0Wz7WEE5odM0tMzZNRz_b3VefIc7YIRdbqzP1hoA-l0lD4_Yp9bmtM9mJejyYtkDHVWYR8NHH7M5IdYqu3jxTvpBNGw3baTSwvTtdFDPiOk17T7moYxnFBUlaZjV0VhOsh4FYWrG3wxDc3TGahcBevwFLp11JT-tkLTsrTTkb4TRtyEPFNJ__gaBCAoobSWr2b3kfkae6lsgRvaMLNzfUMkNK8v3u7nzwtkPxHf_IS2GoIJPDwNhuEGCnRK3R00zd3HSI1t3ZRCq_)
+## Object Diagram
+This diagram shows instances of the classes in the system and their relationships at a specific point in time.
+![Diagram](https://www.plantuml.com/plantuml/png/LP91RzGm48Nl_XLMZaY9aWLnM26qKFLG93Wq804Nv4scNLUs9tWckqJ0VyTslDJ9QVpUw7tZYG_4olDiZS3Z4mmiPmBVoTz2fkfktClgIzjsLHQSiX2a9pov7oD2b2T5T44VEwzbjtiP7R1AcznzW5_AJWQQ0Mqb_eeh3uA82y3Al9uIzpPpC_ETqGF8tce-9IoIPeqkE3q-y4LvaBVkKJi07trIHlbbBr-tuIk0Wz7WEE5odM0tMzZNRz_b3VefIc7YIRdbqzP1hoA-l0lD4_Yp9bmtM9mJejyYtkDHVWYR8NHH7M5IdYqu3jxTvpBNGw3baTSwvTtdFDPiOk17T7moYxnFBUlaZjV0VhOsh4FYWrG3wxDc3TGahcBevwFLp11JT-tkLTsrTTkb4TRtyEPFNJ__gaBCAoobSWr2b3kfkae6lsgRvaMLNzfUMkNK8v3u7nzwtkPxHf_IS2GoIJPDwNhuEGCnRK3R00zd3HSI1t3ZRCq_)
+
+## Conclusion
+In this lab, I created several UML diagrams to visualize different aspects of the system. The use case diagram helps identify user interactions, while the class and object diagrams provide insights into the structure and relationships within the system. These visual representations are crucial for effective system design and communication.
+
