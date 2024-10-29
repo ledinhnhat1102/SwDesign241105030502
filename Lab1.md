@@ -33,3 +33,34 @@ Kiến trúc tổng quát: Hệ thống Quản lý Tiền lương được thi�
 ### 1.3 Biểu đồ Package Mô tả Kiến trúc
 
 ![Diagram](https://www.plantuml.com/plantuml/png/NO-n3e8m48RtFiM5dLSmY3gGQCBYH1ZEUXAqN4dl68ZntIscHiFMVFtptVyNeXXq6fmPqJwm8yXshYVM39u6e3aB1QXOATpGKcjUvXSiuuFucfBRkceXppVGb9FqJ29mz5rlMmDhb79xLBoWhAnVchI7ONH-9eA5Vrmrpi4xzmU2lvDLE257mq2iwIzgLmFIvQMhAMBtEFmD)
+
+## 2. Cơ chế Phân tích
+
+### 2.1 Các cơ chế cần thiết
+
+Để xây dựng hệ thống Quản lý Tiền lương hiệu quả, cần xem xét các cơ chế sau:
+
+#### Xác thực và phân quyền người dùng:
+- **Giải thích:** Đảm bảo chỉ những người dùng hợp lệ có thể truy cập hệ thống.
+- **Cơ chế:** Cơ chế xác thực qua tên người dùng và mật khẩu, phân quyền dựa trên vai trò.
+
+#### Quản lý thông tin nhân viên:
+- **Giải thích:** Lưu trữ và quản lý thông tin chi tiết của nhân viên.
+- **Cơ chế:** Cơ chế quản lý cơ sở dữ liệu để lưu trữ và truy xuất thông tin nhân viên.
+
+#### Tính toán và xử lý tiền lương:
+- **Giải thích:** Tính toán tiền lương cho các loại nhân viên khác nhau.
+- **Cơ chế:** Tự động hóa thanh toán và tính toán tiền lương theo thời gian làm việc.
+
+#### Báo cáo và truy xuất thông tin:
+- **Giải thích:** Cung cấp khả năng truy xuất và báo cáo thông tin cho nhân viên và quản trị viên.
+- **Cơ chế:** Hệ thống báo cáo và phân tích cho phép người dùng truy xuất và phân tích dữ liệu.
+
+#### Bảo mật và bảo vệ dữ liệu:
+- **Giải thích:** Bảo vệ dữ liệu tiền lương và thông tin cá nhân khỏi các truy cập trái phép.
+- **Cơ chế:** Mã hóa dữ liệu và kiểm tra, ghi log các hành động của người dùng.
+
+#### Tích hợp với hệ thống hiện tại:
+- **Giải thích:** Tích hợp thông tin từ cơ sở dữ liệu quản lý dự án hiện có.
+- **Cơ chế:** Truy cập thông tin từ cơ sở dữ liệu kế thừa mà không cần cập nhật dữ liệu.
+
