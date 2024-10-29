@@ -1,66 +1,68 @@
+# PHÂN TÍCH KIẾN TRÚC, CƠ CHẾ, CA SỬ DỤNG
 
-# Phân tích Hệ thống Quản lý Tiền lương
+## Mục đích
+Phân tích kiến trúc và ca sử dụng của hệ thống "Payroll System".
 
-## 1. Phân tích Kiến trúc
+## Thực hiện
 
-### 1.1 Đề xuất Kiến trúc
-Kiến trúc tổng quát: Hệ thống Quản lý Tiền lương được thiết kế theo mô hình client-server, bao gồm các thành phần chính sau:
+### 1. Phân tích kiến trúc
 
-- **Giao diện người dùng (Client)**: Ứng dụng desktop dành cho nhân viên và quản trị viên.
-- **Backend Server**: Máy chủ xử lý logic nghiệp vụ và tương tác với cơ sở dữ liệu.
-- **Cơ sở dữ liệu (Database)**: Lưu trữ thông tin nhân viên, tiền lương, thời gian làm việc, đơn đặt hàng mua hàng, và thông tin liên quan đến dự án.
+#### 1.1 Đề xuất kiến trúc
+Kiến trúc tổng thể của hệ thống "Payroll System" được thiết kế theo mô hình client-server, cho phép tách biệt rõ ràng giữa giao diện người dùng và logic xử lý nghiệp vụ, giúp hệ thống dễ dàng mở rộng và bảo trì.
 
-### 1.2 Ý nghĩa và lý do lựa chọn từng thành phần
-- **Giao diện người dùng (UI)**:
-  - **Ý nghĩa**: Cung cấp giao diện tương tác cho nhân viên và quản trị viên để nhập thông tin và truy xuất báo cáo.
-  - **Lý do**: Một giao diện người dùng thân thiện giúp người dùng dễ dàng thao tác mà không cần kiến thức kỹ thuật.
+- **Thành phần trong kiến trúc**:
+  1. **Giao diện người dùng (Client)**:
+     - **Ý nghĩa**: Cung cấp trải nghiệm người dùng cho nhân viên và quản trị viên để thực hiện các chức năng như xem thông tin, quản lý thanh toán, và cập nhật thông tin.
+     - **Lý do lựa chọn**: Giao diện đồ họa dễ sử dụng giúp người dùng thực hiện nhiệm vụ một cách hiệu quả và nhanh chóng.
 
-- **API (Application Programming Interface)**:
-  - **Ý nghĩa**: Đóng vai trò cầu nối giữa giao diện người dùng và backend, cho phép truyền tải dữ liệu từ người dùng đến server.
-  - **Lý do**: Tổ chức mã nguồn rõ ràng và dễ bảo trì, cho phép phát triển ứng dụng khác trong tương lai.
+  2. **Backend Server**:
+     - **Ý nghĩa**: Xử lý tất cả các yêu cầu từ giao diện người dùng, thực hiện các tính toán tiền lương, và tương tác với cơ sở dữ liệu.
+     - **Lý do lựa chọn**: Tách biệt logic nghiệp vụ với giao diện giúp dễ dàng cập nhật và mở rộng trong tương lai.
 
-- **Backend Server**:
-  - **Ý nghĩa**: Xử lý logic nghiệp vụ, quản lý các yêu cầu từ người dùng và tính toán tiền lương.
-  - **Lý do**: Tách biệt logic nghiệp vụ với giao diện người dùng, dễ bảo trì và mở rộng.
+  3. **Cơ sở dữ liệu (Database)**:
+     - **Ý nghĩa**: Lưu trữ tất cả thông tin liên quan đến nhân viên, tiền lương, thời gian làm việc và phương thức thanh toán.
+     - **Lý do lựa chọn**: Sử dụng cơ sở dữ liệu quan hệ để quản lý dữ liệu hiệu quả và đảm bảo tính toàn vẹn.
 
-- **Cơ sở dữ liệu (DB)**:
-  - **Ý nghĩa**: Lưu trữ thông tin liên quan đến nhân viên, tiền lương, đơn đặt hàng, và các thông tin khác.
-  - **Lý do**: Sử dụng cơ sở dữ liệu quan hệ để dễ dàng quản lý và truy vấn dữ liệu.
+  4. **API (Application Programming Interface)**:
+     - **Ý nghĩa**: Là cầu nối giữa giao diện người dùng và backend server, cho phép các thành phần giao tiếp với nhau.
+     - **Lý do lựa chọn**: API giúp tổ chức mã nguồn rõ ràng và dễ bảo trì, đồng thời có thể hỗ trợ tích hợp với các hệ thống khác trong tương lai.
 
-- **Project Management Database**:
-  - **Ý nghĩa**: Cơ sở dữ liệu hiện có lưu trữ thông tin về dự án và số charge, mà hệ thống mới sẽ truy cập.
-  - **Lý do**: Tránh thay thế hệ thống cũ, tiết kiệm chi phí và đảm bảo tính nhất quán.
-### 1.3 Biểu đồ Package Mô tả Kiến trúc
+#### 1.2 Biểu đồ package mô tả kiến trúc
+![Diagram](http://www.plantuml.com/plantuml/png/TP7TQiCm38NlynIczts5qPQECTXWxES1L4VhmlmJ9EKYZBxxD3EAZTn0RdGEvvEFTYn0iiGmpE2_uOnkym8hvH3Ssyg2SUD-1kUkuWSZkSSaI9_WiOZw-G3CxZxE8Q-8H-2lKmOQAsq_nYdLmaN_ElYmy9HGdK_vFFas-7-ZPqXgfKfudo9wpRFAAywPv04J4aYc3l080cxllJBxp_YBu4aohUqg4PDOhTgc4NlO4_2jwWwMfJFBqE4rs_JkjjixMrfxWhwd7HHFjmxhwpRJtgVu-YrPIF4sjHX0ZIqE6zqGrNCPTfZ69OPV)
 
-![Diagram](https://www.plantuml.com/plantuml/png/NO-n3e8m48RtFiM5dLSmY3gGQCBYH1ZEUXAqN4dl68ZntIscHiFMVFtptVyNeXXq6fmPqJwm8yXshYVM39u6e3aB1QXOATpGKcjUvXSiuuFucfBRkceXppVGb9FqJ29mz5rlMmDhb79xLBoWhAnVchI7ONH-9eA5Vrmrpi4xzmU2lvDLE257mq2iwIzgLmFIvQMhAMBtEFmD)
+## 2. Cơ chế phân tích
 
-## 2. Cơ chế Phân tích
+### 2.1 Đề xuất cơ chế cần giải quyết trong bài toán
+Dựa trên phân tích yêu cầu, các cơ chế cần thiết cho hệ thống "Payroll System" bao gồm:
 
-### 2.1 Các cơ chế cần thiết
+1. **Xác thực và phân quyền người dùng**:
+   - **Lý do**: Đảm bảo chỉ những người dùng hợp lệ mới có thể truy cập hệ thống và thực hiện các chức năng nhất định.
 
-Để xây dựng hệ thống Quản lý Tiền lương hiệu quả, cần xem xét các cơ chế sau:
+2. **Quản lý thông tin nhân viên**:
+   - **Lý do**: Hệ thống cần lưu trữ và quản lý thông tin của một số lượng lớn nhân viên (có thể lên đến hàng nghìn người).
 
-#### Xác thực và phân quyền người dùng:
-- **Giải thích:** Đảm bảo chỉ những người dùng hợp lệ có thể truy cập hệ thống.
-- **Cơ chế:** Cơ chế xác thực qua tên người dùng và mật khẩu, phân quyền dựa trên vai trò.
+3. **Tính toán tiền lương**:
+   - **Lý do**: Hệ thống cần tính toán chính xác tiền lương cho từng nhân viên dựa trên số giờ làm việc, tỷ lệ lương, và các khoản phụ cấp.
 
-#### Quản lý thông tin nhân viên:
-- **Giải thích:** Lưu trữ và quản lý thông tin chi tiết của nhân viên.
-- **Cơ chế:** Cơ chế quản lý cơ sở dữ liệu để lưu trữ và truy xuất thông tin nhân viên.
+4. **Quản lý thời gian làm việc (Timecard)**:
+   - **Lý do**: Cần ghi lại thời gian làm việc của nhân viên để tính toán tiền lương.
 
-#### Tính toán và xử lý tiền lương:
-- **Giải thích:** Tính toán tiền lương cho các loại nhân viên khác nhau.
-- **Cơ chế:** Tự động hóa thanh toán và tính toán tiền lương theo thời gian làm việc.
+5. **Tạo báo cáo**:
+   - **Lý do**: Cung cấp báo cáo về tiền lương, thời gian làm việc, và các thông tin liên quan cho quản lý.
 
-#### Báo cáo và truy xuất thông tin:
-- **Giải thích:** Cung cấp khả năng truy xuất và báo cáo thông tin cho nhân viên và quản trị viên.
-- **Cơ chế:** Hệ thống báo cáo và phân tích cho phép người dùng truy xuất và phân tích dữ liệu.
+6. **Bảo mật và bảo vệ dữ liệu**:
+   - **Lý do**: Dữ liệu về tiền lương và thông tin nhân viên rất nhạy cảm và cần được bảo vệ khỏi truy cập trái phép.
 
-#### Bảo mật và bảo vệ dữ liệu:
-- **Giải thích:** Bảo vệ dữ liệu tiền lương và thông tin cá nhân khỏi các truy cập trái phép.
-- **Cơ chế:** Mã hóa dữ liệu và kiểm tra, ghi log các hành động của người dùng.
+7. **Tích hợp với hệ thống hiện tại**:
+   - **Lý do**: Hệ thống mới có thể cần truy cập thông tin từ các hệ thống hiện có hoặc được tích hợp với chúng.
 
-#### Tích hợp với hệ thống hiện tại:
-- **Giải thích:** Tích hợp thông tin từ cơ sở dữ liệu quản lý dự án hiện có.
-- **Cơ chế:** Truy cập thông tin từ cơ sở dữ liệu kế thừa mà không cần cập nhật dữ liệu.
+### 2.2 Danh sách cơ chế
+- a. Cơ chế xác thực người dùng
+- b. Cơ chế phân quyền người dùng
+- c. Cơ chế quản lý cơ sở dữ liệu
+- d. Cơ chế tính toán tiền lương
+- e. Cơ chế quản lý thời gian làm việc
+- f. Cơ chế tạo báo cáo
+- g. Cơ chế mã hóa dữ liệu và bảo vệ thông tin
+- h. Cơ chế truy cập hệ thống hiện tại
 
