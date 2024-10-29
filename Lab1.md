@@ -1,13 +1,8 @@
 # PHÂN TÍCH KIẾN TRÚC, CƠ CHẾ, CA SỬ DỤNG
 
-## Mục đích
-Phân tích kiến trúc và ca sử dụng của hệ thống "Payroll System".
+## 1. Phân tích kiến trúc
 
-## Thực hiện
-
-### 1. Phân tích kiến trúc
-
-#### 1.1 Đề xuất kiến trúc
+### 1.1 Đề xuất kiến trúc
 Kiến trúc tổng thể của hệ thống "Payroll System" được thiết kế theo mô hình client-server, cho phép tách biệt rõ ràng giữa giao diện người dùng và logic xử lý nghiệp vụ, giúp hệ thống dễ dàng mở rộng và bảo trì.
 
 - **Thành phần trong kiến trúc**:
@@ -27,7 +22,7 @@ Kiến trúc tổng thể của hệ thống "Payroll System" được thiết k
      - **Ý nghĩa**: Là cầu nối giữa giao diện người dùng và backend server, cho phép các thành phần giao tiếp với nhau.
      - **Lý do lựa chọn**: API giúp tổ chức mã nguồn rõ ràng và dễ bảo trì, đồng thời có thể hỗ trợ tích hợp với các hệ thống khác trong tương lai.
 
-#### 1.2 Biểu đồ package mô tả kiến trúc
+### 1.2 Biểu đồ package mô tả kiến trúc
 ![Diagram](http://www.plantuml.com/plantuml/png/TP7TQiCm38NlynIczts5qPQECTXWxES1L4VhmlmJ9EKYZBxxD3EAZTn0RdGEvvEFTYn0iiGmpE2_uOnkym8hvH3Ssyg2SUD-1kUkuWSZkSSaI9_WiOZw-G3CxZxE8Q-8H-2lKmOQAsq_nYdLmaN_ElYmy9HGdK_vFFas-7-ZPqXgfKfudo9wpRFAAywPv04J4aYc3l080cxllJBxp_YBu4aohUqg4PDOhTgc4NlO4_2jwWwMfJFBqE4rs_JkjjixMrfxWhwd7HHFjmxhwpRJtgVu-YrPIF4sjHX0ZIqE6zqGrNCPTfZ69OPV)
 
 ## 2. Cơ chế phân tích
@@ -126,4 +121,91 @@ Mô tả quy trình thanh toán:
 Mô tả cấu trúc các lớp liên quan đến thanh toán:
 
 ![Diagram](http://www.plantuml.com/plantuml/png/TP71IaGn34NtxokoLFJzG1V388AuK8J13uYTC1PVqg59bK7yTwVQ5YkyxfhSU-wbtQfXiipBv1TKXMUb19yJdCyC-NovtplOMGfo-3DyHAO-_fggzmbFJ6BTZXopc8FRc5yMgiFZh-Y1x3N-HwkXPLq5xoYz1q-LVmN753sfrkt567SDF4HShcBlqEW3JnqR95X0eyQjZLtJ3wIVzvhdJLkwRbVOJ6FnKSSeU5XJZTKS-CYS9VZ67PiNnmtAMmatIkYjYBOa-_Antm00)
+
+## 4. Phân tích ca sử dụng Maintain Timecard
+### 4.1 Mô tả ca sử dụng Maintain Timecard
+Ca sử dụng "Maintain Timecard" cho phép quản trị viên hoặc người quản lý ghi lại và quản lý thời gian làm việc của nhân viên. Ca sử dụng này sẽ thực hiện các chức năng như thêm, chỉnh sửa và xóa thông tin thời gian làm việc của nhân viên.
+#### 4.1.1 Các bước thực hiện
+- Đăng nhập vào hệ thống: Người dùng phải đăng nhập để truy cập vào chức năng quản lý thời gian làm việc.
+- Chọn nhân viên: Người quản lý chọn nhân viên mà họ muốn quản lý thông tin thời gian làm việc.
+- Thêm/Chỉnh sửa/Xóa thời gian làm việc: Người quản lý thực hiện các hành động để thêm, chỉnh sửa hoặc xóa thông tin thời gian làm việc cho nhân viên.
+- Lưu thông tin: Sau khi thực hiện các thao tác, thông tin sẽ được lưu vào cơ sở dữ liệu.
+- Đăng xuất: Người quản lý có thể đăng xuất khỏi hệ thống khi hoàn thành công việc.
+### 4.2 Xác định các lớp phân tích
+
+Dưới đây là các lớp phân tích cần thiết cho ca sử dụng "Maintain Timecard":
+
+#### 1. User (Người dùng)
+- **Thuộc tính:**
+  - `userID: String`
+  - `username: String`
+  - `password: String`
+
+- **Phương thức:**
+  - `login(): void`
+  - `logout(): void`
+
+#### 2. Employee (Nhân viên)
+- **Thuộc tính:**
+  - `employeeID: String`
+  - `name: String`
+  - `position: String`
+
+- **Phương thức:**
+  - `getTimecard(): Timecard[]`
+  - `updateTimecard(timecard: Timecard): void`
+
+#### 3. Timecard (Thời gian làm việc)
+- **Thuộc tính:**
+  - `timecardID: String`
+  - `employeeID: String`
+  - `clockInTime: Date`
+  - `clockOutTime: Date`
+  - `hoursWorked: Double`
+
+- **Phương thức:**
+  - `calculateHours(): Double`
+  - `save(): void`
+  - `delete(): void`
+
+#### 4. TimecardManager (Quản lý thời gian làm việc)
+- **Thuộc tính:**
+  - `timecards: List<Timecard>`
+
+- **Phương thức:**
+  - `addTimecard(timecard: Timecard): void`
+  - `editTimecard(timecard: Timecard): void`
+  - `deleteTimecard(timecardID: String): void`
+  - `getAllTimecards(): List<Timecard>`
+### 4.3 Biểu đồ sequence mô tả hành vi
+Dưới đây là biểu đồ sequence mô tả hành vi của ca sử dụng "Maintain Timecard":
+![Diagram](http://www.plantuml.com/plantuml/png/bPAnoiCW58LtdyBH3FyB_4D98HqoT6iVuAA781WLlIdqxPj0X68ReTlbUBxF2zfdfiJBx0Hf3adUCvA8QsIrZUHPtkmCJSbSoTDKdLtcwC8J-0e8iRdatwbM_4iN9kjLTrp8SD1Sz0hxC0uDXemfcU9zw4HLUoVNQ-W1TT2fx1Fux5o9Ssjv6Ck_Rh94GuoMrS21yU4TXwQvSAfhlaPOU6tqy6Rx2Iy0)
+
+### 4.4 Nhiệm vụ của từng lớp phân tích
+
+- **User:** 
+  - Chịu trách nhiệm quản lý đăng nhập và đăng xuất khỏi hệ thống.
+
+- **Employee:** 
+  - Quản lý thông tin nhân viên và thực hiện các thao tác liên quan đến thời gian làm việc của họ.
+
+- **Timecard:** 
+  - Lưu trữ thông tin về thời gian làm việc, bao gồm giờ vào và giờ ra, và tính toán tổng số giờ làm việc.
+
+- **TimecardManager:** 
+  - Chịu trách nhiệm thêm, chỉnh sửa và xóa thông tin thời gian làm việc, cũng như truy xuất danh sách thời gian làm việc của nhân viên.
+### 4.5 Quan hệ giữa các lớp phân tích
+
+- **User và TimecardManager:** 
+  - Người dùng tương tác với `TimecardManager` để thực hiện các hành động liên quan đến thời gian làm việc.
+
+- **TimecardManager và Timecard:** 
+  - `TimecardManager` quản lý danh sách các `Timecard`: thêm, sửa đổi và xóa các đối tượng `Timecard`.
+
+- **Employee và Timecard:** 
+  - Mỗi nhân viên (`Employee`) có thể có nhiều `Timecard`: lưu trữ nhiều thông tin về thời gian làm việc.
+### 4.6 Biểu đồ lớp mô tả lớp phân tích
+
+![Diagram](http://www.plantuml.com/plantuml/png/XPB1IWCn48Rl-nGvjaXVe4YfKC62ui6A1_4m9iCQEfkKpAGYuhlRbJJRP8NTK_QRZym_GzOi42Hsr6W2PlNC6DHteqxVGaN6iDqirPC4wzeBwA332X-0-TC7K-0hHRwrRZPVggEtPc0-IeO_JUfzsnt8Vo7c_fZ0ACD__JrRiTvL_LkKdUrGGp1zm_FvzItLuy60O5Oa7GQpJfaBEQKaCAISYg_9w_tMxMm_nGO4B_bZb57XmyV0BpxiqPouZ--4ARy6qf50yAvNPlEgp734Qli62IN3yLmFuA35C1gFb-hUiboVlLMw3uoPNbzoqLYPaEkWXLwkkTHRb1kYizwleihRZ_htl1UBLJrjK_nNJfCVPa7Nw4piw1S0)
+
 
