@@ -208,118 +208,39 @@ Dưới đây là biểu đồ sequence mô tả hành vi của ca sử dụng "
 
 ![Diagram](http://www.plantuml.com/plantuml/png/XPB1IWCn48Rl-nGvjaXVe4YfKC62ui6A1_4m9iCQEfkKpAGYuhlRbJJRP8NTK_QRZym_GzOi42Hsr6W2PlNC6DHteqxVGaN6iDqirPC4wzeBwA332X-0-TC7K-0hHRwrRZPVggEtPc0-IeO_JUfzsnt8Vo7c_fZ0ACD__JrRiTvL_LkKdUrGGp1zm_FvzItLuy60O5Oa7GQpJfaBEQKaCAISYg_9w_tMxMm_nGO4B_bZb57XmyV0BpxiqPouZ--4ARy6qf50yAvNPlEgp734Qli62IN3yLmFuA35C1gFb-hUiboVlLMw3uoPNbzoqLYPaEkWXLwkkTHRb1kYizwleihRZ_htl1UBLJrjK_nNJfCVPa7Nw4piw1S0)
 
-## 5. Hợp nhất kết quả phân tích
+## 5. Tài liệu mô tả hợp nhất ca sử dụng
 
-### 5.1 Tổng quan về hệ thống
+### 1. Ca Sử Dụng: Thanh Toán (Payment)
+**Mô Tả**  
+Người dùng thực hiện thanh toán cho các dịch vụ hoặc sản phẩm thông qua hệ thống. Hệ thống sẽ xử lý giao dịch và thông báo kết quả cho người dùng.
 
-Trong hệ thống quản lý thanh toán và thời gian làm việc, hai ca sử dụng chính là "Maintain Timecard" và "Select Payment". Mục tiêu của việc hợp nhất này là làm rõ sự tương tác giữa các lớp và cách thông tin được xử lý trong hệ thống. Mỗi ca sử dụng đều có vai trò quan trọng trong việc đảm bảo rằng nhân viên có thể quản lý thông tin thanh toán và giờ làm việc một cách hiệu quả.
+**Tham Gia**  
+- **Người dùng:** Người thực hiện thanh toán.  
+- **Hệ thống thanh toán:** Xử lý và quản lý giao dịch thanh toán.
 
-### 5.2 Mô tả hai ca sử dụng
+**Quy Trình**  
+1. Người dùng đăng nhập vào hệ thống.
+2. Chọn sản phẩm hoặc dịch vụ muốn thanh toán.
+3. Nhập thông tin thanh toán (số tiền, phương thức thanh toán).
+4. Hệ thống xử lý thanh toán và gửi yêu cầu đến cổng thanh toán.
+5. Nhận kết quả thanh toán và thông báo cho người dùng.
 
-#### 5.2.1 Ca sử dụng "Maintain Timecard"
+---
 
-- **Mục tiêu**: Cung cấp khả năng cho quản lý ghi lại và quản lý thời gian làm việc của nhân viên.
-- **Các bước thực hiện**:
-  1. Đăng nhập vào hệ thống.
-  2. Chọn nhân viên cần quản lý.
-  3. Thêm, chỉnh sửa hoặc xóa thời gian làm việc.
-  4. Lưu thông tin vào cơ sở dữ liệu.
-  5. Đăng xuất khỏi hệ thống.
+### 2. Ca Sử Dụng: Quản Lý Thời Gian Làm Việc (Maintain Timecard)
+**Mô Tả**  
+Người quản lý ghi lại và quản lý thời gian làm việc của nhân viên, bao gồm việc thêm, chỉnh sửa và xóa thông tin thời gian làm việc.
 
-#### 5.2.2 Ca sử dụng "Select Payment"
+**Tham Gia**  
+- **Người quản lý:** Người thực hiện quản lý thời gian làm việc.  
+- **Nhân viên:** Người có thông tin thời gian làm việc cần quản lý.
 
-- **Mục tiêu**: Cung cấp khả năng cho người dùng chọn phương thức thanh toán cho các sản phẩm hoặc dịch vụ mà họ muốn mua.
-- **Các bước thực hiện**:
-  1. Đăng nhập vào hệ thống.
-  2. Chọn sản phẩm hoặc dịch vụ.
-  3. Chọn phương thức thanh toán.
-  4. Xác nhận giao dịch thanh toán.
-  5. Đăng xuất khỏi hệ thống.
-
-### 5.3 Xác định các lớp phân tích
-
-Để hỗ trợ cho các ca sử dụng trên, các lớp phân tích được xác định như sau:
-
-#### 1. User (Người dùng)
-- **Thuộc tính**: 
-  - `userID: String`
-  - `username: String`
-  - `password: String`
-- **Phương thức**: 
-  - `login(): void`
-  - `logout(): void`
-
-#### 2. Employee (Nhân viên)
-- **Thuộc tính**: 
-  - `employeeID: String`
-  - `name: String`
-  - `position: String`
-- **Phương thức**: 
-  - `getTimecard(): Timecard[]`
-  - `updateTimecard(timecard: Timecard): void`
-
-#### 3. Timecard (Thời gian làm việc)
-- **Thuộc tính**: 
-  - `timecardID: String`
-  - `employeeID: String`
-  - `clockInTime: Date`
-  - `clockOutTime: Date`
-  - `hoursWorked: Double`
-- **Phương thức**: 
-  - `calculateHours(): Double`
-  - `save(): void`
-  - `delete(): void`
-
-#### 4. TimecardManager (Quản lý thời gian làm việc)
-- **Thuộc tính**: 
-  - `timecards: List<Timecard>`
-- **Phương thức**: 
-  - `addTimecard(timecard: Timecard): void`
-  - `editTimecard(timecard: Timecard): void`
-  - `deleteTimecard(timecardID: String): void`
-  - `getAllTimecards(): List<Timecard>`
-
-#### 5. PaymentMethod (Phương thức thanh toán)
-- **Thuộc tính**: 
-  - `paymentMethodID: String`
-  - `methodName: String`
-  - `status: String`
-- **Phương thức**: 
-  - `addPaymentMethod(method: PaymentMethod): void`
-  - `updatePaymentMethod(method: PaymentMethod): void`
-  - `deletePaymentMethod(methodID: String): void`
-
-#### 6. PaymentManager (Quản lý thanh toán)
-- **Thuộc tính**: 
-  - `payments: List<Payment>`
-- **Phương thức**: 
-  - `processPayment(payment: Payment): void`
-  - `getPaymentHistory(userID: String): List<Payment>`
-
-### 5.4 Tương tác giữa các lớp
-
-- **User và TimecardManager**: 
-  - Người dùng (quản lý) tương tác với `TimecardManager` để thực hiện các hành động liên quan đến thời gian làm việc.
-  
-- **User và PaymentManager**: 
-  - Người dùng tương tác với `PaymentManager` để thực hiện các hành động liên quan đến thanh toán.
-
-- **TimecardManager và Timecard**: 
-  - `TimecardManager` quản lý danh sách các `Timecard`, bao gồm thêm, sửa đổi và xóa các đối tượng `Timecard`.
-
-- **PaymentManager và PaymentMethod**: 
-  - `PaymentManager` quản lý danh sách các phương thức thanh toán và xử lý các giao dịch thanh toán.
-
-- **Employee và Timecard**: 
-  - Mỗi nhân viên (`Employee`) có thể có nhiều `Timecard` để lưu trữ nhiều thông tin về thời gian làm việc.
-
-### 5.5 Biểu đồ lớp mô tả lớp phân tích
-
-![Diagram](http://www.plantuml.com/plantuml/png/XPB1IWCn48Rl-nGvjaXVe4YfKC62ui6A1_4m9iCQEfkKpAGYuhlRbJJRP8NTK_QRZym_GzOi42Hsr6W2PlNC6DHteqxVGaN6iDqirPC4wzeBwA332X-0-TC7K-0hHRwrRZPVggEtPc0-IeO_JUfzsnt8Vo7c_fZ0ACD__JrRiTvL_LkKdUrGGp1zm_FvzItLuy60O5Oa7GQpJfaBEQKaCAISYg_9w_tMxMm_nGO4B_bZb57XmyV0BpxiqPouZ--4ARy6qf50yAvNPlEgp734Qli62IN3yLmFuA35C1gFb-hUiboVlLMw3uoPNbzoqLYPaEkWXLwkkTHRb1kYizwleihRZ_htl1UBLJrjK_nNJfCVPa7Nw4piw1S0)
-
-### 5.6 Kết luận
-
-Việc hợp nhất kết quả phân tích từ hai ca sử dụng "Maintain Timecard" và "Select Payment" cho thấy một cách tiếp cận đồng bộ trong việc quản lý thông tin thanh toán và thời gian làm việc của nhân viên. Các lớp phân tích được xác định rõ ràng giúp tạo điều kiện cho việc mở rộng và bảo trì hệ thống. Sự tương tác giữa các lớp cho thấy rằng cả hai ca sử dụng đều hướng đến việc cải thiện trải nghiệm của người dùng và hiệu suất làm việc của hệ thống.
+**Quy Trình**  
+1. Người quản lý đăng nhập vào hệ thống.
+2. Chọn nhân viên cần quản lý thông tin thời gian làm việc.
+3. Thêm, chỉnh sửa hoặc xóa thông tin thời gian làm việc của nhân viên.
+4. Lưu thông tin vào cơ sở dữ liệu.
+5. Người quản lý có thể đăng xuất khỏi hệ thống khi hoàn thành công việc.
 
 
 
