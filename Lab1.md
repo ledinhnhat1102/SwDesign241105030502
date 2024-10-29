@@ -66,3 +66,64 @@ Dựa trên phân tích yêu cầu, các cơ chế cần thiết cho hệ thốn
 - g. Cơ chế mã hóa dữ liệu và bảo vệ thông tin
 - h. Cơ chế truy cập hệ thống hiện tại
 
+## 3. Phân Tích Ca Sử Dụng "Payment"
+
+### 3.1. Mô Tả Ca Sử Dụng
+- **Tên ca sử dụng**: Payment
+- **Mô tả**: Người dùng thực hiện thanh toán cho các dịch vụ hoặc sản phẩm. Hệ thống sẽ xử lý thanh toán và thông báo kết quả cho người dùng.
+
+### Người tham gia:
+- **User**: Người dùng thực hiện thanh toán.
+- **PaymentController**: Điều khiển quy trình thanh toán.
+- **PaymentService**: Xử lý logic thanh toán.
+- **PaymentGateway**: Cổng thanh toán bên thứ ba.
+- **Bank**: Ngân hàng xử lý giao dịch.
+
+### 3.2. Các Lớp Phân Tích
+
+#### PaymentController
+- **Thuộc tính**:
+  - `paymentService: PaymentService`
+- **Nhiệm vụ**:
+  - Nhận yêu cầu thanh toán từ người dùng.
+  - Gọi PaymentService để xử lý thanh toán.
+
+#### PaymentService
+- **Thuộc tính**:
+  - `paymentGateway: PaymentGateway`
+- **Nhiệm vụ**:
+  - Tạo đối tượng Payment.
+  - Gọi PaymentGateway để thực hiện thanh toán.
+  - Cập nhật trạng thái thanh toán.
+
+#### Payment
+- **Thuộc tính**:
+  - `amount: Double`
+  - `paymentMethod: String`
+  - `status: String`
+- **Nhiệm vụ**:
+  - Chứa thông tin thanh toán.
+
+#### PaymentGateway
+- **Thuộc tính**:
+  - `bank: Bank`
+- **Nhiệm vụ**:
+  - Thực hiện thanh toán thông qua ngân hàng.
+
+#### User
+- **Thuộc tính**:
+  - `userId: String`
+  - `userName: String`
+- **Nhiệm vụ**:
+  - Khởi tạo yêu cầu thanh toán.
+
+### 3.3. Biểu Đồ Sequence
+Mô tả quy trình thanh toán:
+
+![Diagram](http://www.plantuml.com/plantuml/png/XT1DQiCm40NWlKunP9L2G_TUb60ll3KHES2WJAceVjpHJ4jkN__8q89BLWRxqtlFEXT15et1e9FCS2t4PaGMx_o8IU0mu3rIaYuduHm2yG6mmD3jAalyvHsjnEwI7eM-yRwI_YzfCNqi7rfZvYLmUfsQ6hZGfr8Hg157Z5cJF4CaUS-t9pDqYxGDZ9mTbV8lj1jqJ2W43s3VW4zU_4GtMPyJwMVIDZ2idLkMQU5KpzOtq_wYGOv5tGnVtj07PLeZwfuBYNAgSgcl_tuTRx-6WXKKBJjHtN9YlhN7lMTADutX1m00)
+
+### 3.4. Biểu đồ lớp
+Mô tả cấu trúc các lớp liên quan đến thanh toán:
+
+![Diagram](http://www.plantuml.com/plantuml/png/TP71IaGn34NtxokoLFJzG1V388AuK8J13uYTC1PVqg59bK7yTwVQ5YkyxfhSU-wbtQfXiipBv1TKXMUb19yJdCyC-NovtplOMGfo-3DyHAO-_fggzmbFJ6BTZXopc8FRc5yMgiFZh-Y1x3N-HwkXPLq5xoYz1q-LVmN753sfrkt567SDF4HShcBlqEW3JnqR95X0eyQjZLtJ3wIVzvhdJLkwRbVOJ6FnKSSeU5XJZTKS-CYS9VZ67PiNnmtAMmatIkYjYBOa-_Antm00)
+
