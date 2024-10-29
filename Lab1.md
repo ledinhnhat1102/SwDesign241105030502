@@ -30,3 +30,5 @@ Kiến trúc tổng quát: Hệ thống Quản lý Tiền lương được thi�
 - **Project Management Database**:
   - **Ý nghĩa**: Cơ sở dữ liệu hiện có lưu trữ thông tin về dự án và số charge, mà hệ thống mới sẽ truy cập.
   - **Lý do**: Tránh thay thế hệ thống cũ, tiết kiệm chi phí và đảm bảo tính nhất quán.
+### 1.3 Biểu đồ Package Mô tả Kiến trúc
+![Diagram](http://www.plantuml.com/plantuml/png/NO-n3e8m48RtFiM5dLSmY3gGQCBYH1ZEUXAqN4dl68ZntIscHiFMVFtptVyNeXXq6fmPqJwm8yXshYVM39u6e3aB1QXOATpGKcjUvXSiuuFucfBRkceXppVGb9FqJ29mz5rlMmDhb79xLBoWhAnVchI7ONH-9eA5Vrmrpi4xzmU2lvDLE257mq2iwIzgLmFIvQMhAMBtEFmD
