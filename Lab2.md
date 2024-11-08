@@ -52,3 +52,64 @@ Nhân viên hưởng lương hoa hồng.
 3. Nếu dữ liệu không hợp lệ, thông báo lỗi được gửi lại **PurchaseOrderForm**.
 4. Nếu dữ liệu hợp lệ, **PurchaseOrderController** chuyển dữ liệu tới lớp **PurchaseOrder** để lưu vào cơ sở dữ liệu.
 5. Sau khi lưu thành công, **PurchaseOrderController** gửi xác nhận thành công tới **PurchaseOrderConfirmationView** để hiển thị cho nhân viên.
+
+---
+
+## 1.4 Biểu đồ tuần tự (Sequence Diagram) cho "Record Purchase Orders"
+
+Biểu đồ này minh họa cách các đối tượng giao tiếp trong quá trình ghi nhận đơn hàng của nhân viên.
+
+### **Tác nhân:**  
+- **Employee**
+
+### **Các đối tượng:**  
+- **PurchaseOrderForm (Boundary)**
+- **PurchaseOrderController (Control)**
+- **PurchaseOrder (Entity)**
+- **CommissionEmployee (Entity)**
+
+### **Các bước:**
+1. **Employee** mở giao diện **PurchaseOrderForm**.
+2. **Employee** nhập thông tin đơn hàng (ngày giao dịch, giá trị) và nhấn "Lưu".
+3. **PurchaseOrderForm** gọi phương thức `submitOrder()` trên **PurchaseOrderController**.
+4. **PurchaseOrderController** xác thực thông tin và gọi `createOrder()` trên **PurchaseOrder** để lưu dữ liệu.
+5. **PurchaseOrder** lưu dữ liệu và trả về kết quả (thành công hoặc lỗi).
+6. **PurchaseOrderController** gửi phản hồi tới **PurchaseOrderForm** để hiển thị thông báo cho **Employee**.
+
+---
+
+## 1.5 Biểu đồ lớp (Class Diagram) cho "Record Purchase Orders"
+
+### **Các lớp và mối quan hệ:**
+
+- **PurchaseOrderForm (Boundary)**
+  - **Attributes:** None
+  - **Methods:**
+    - `submitOrder(orderData: OrderData)`
+
+- **PurchaseOrderController (Control)**
+  - **Attributes:** None
+  - **Methods:**
+    - `submitOrder(orderData: OrderData)`
+    - `validateOrder(orderData: OrderData)`
+    - `createOrder(orderData: OrderData)`
+
+- **PurchaseOrder (Entity)**
+  - **Attributes:**
+    - `orderId: String`
+    - `employeeId: String`
+    - `orderDate: Date`
+    - `orderValue: Float`
+  - **Methods:**
+    - `save()`
+
+- **CommissionEmployee (Entity)**
+  - **Attributes:**
+    - `employeeId: String`
+    - `commissionRate: Float`
+  - **Methods:**
+    - `calculateCommission(orderValue: Float)`
+
+### **Quan hệ:**
+- **PurchaseOrderController** tương tác với **PurchaseOrderForm** (hướng 1 chiều từ Form sang Controller).
+- **PurchaseOrderController** quản lý **PurchaseOrder** và liên kết đến **CommissionEmployee** để tính hoa hồng nếu cần.
