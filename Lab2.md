@@ -57,7 +57,7 @@ Nhân viên hưởng lương hoa hồng.
 
 ## 1.4 Biểu đồ tuần tự (Sequence Diagram) cho "Record Purchase Orders"
 
-[Diagram](http://www.plantuml.com/plantuml/png/VP6nJiOm38HtFuL762hs3gWIb1LUmKsCY9J4bUqCVNje4KX_ex_h-UxpoPxCIRsL31HS5EUoPjcOOP5M8-c67qt35nc_QsHz4oqGfBfAlfsy_8gP5RXwybCGu8-CmtFF776kpego2nZPAMM3plQVxRUEQ6qfoG_vuU2yajCZtF5tg163CZbV0t2uhX02cprz_jHlogXigrJZonBzBMAoDTDsni74DUwl-WO0)
+[Diagram](http://www.plantuml.com/api/plantuml/png/VP6nJiOm38HtFuL762hs3gWIb1LUmKsCY9J4bUqCVNje4KX_ex_h-UxpoPxCIRsL31HS5EUoPjcOOP5M8-c67qt35nc_QsHz4oqGfBfAlfsy_8gP5RXwybCGu8-CmtFF776kpego2nZPAMM3plQVxRUEQ6qfoG_vuU2yajCZtF5tg163CZbV0t2uhX02cprz_jHlogXigrJZonBzBMAoDTDsni74DUwl-WO0)
 
 Biểu đồ này minh họa cách các đối tượng giao tiếp trong quá trình ghi nhận đơn hàng của nhân viên.
 
