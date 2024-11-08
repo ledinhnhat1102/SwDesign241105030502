@@ -57,7 +57,7 @@ Nhân viên hưởng lương hoa hồng.
 
 ## 1.4 Biểu đồ tuần tự (Sequence Diagram) cho "Record Purchase Orders"
 
-[Diagram](https://www.plantuml.com/plantuml/png/VP6nJiOm38HtFuL762hs3gWIb1LUmKsCY9J4bUqCVNje4KX_ex_h-UxpoPxCIRsL31HS5EUoPjcOOP5M8-c67qt35nc_QsHz4oqGfBfAlfsy_8gP5RXwybCGu8-CmtFF776kpego2nZPAMM3plQVxRUEQ6qfoG_vuU2yajCZtF5tg163CZbV0t2uhX02cprz_jHlogXigrJZonBzBMAoDTDsni74DUwl-WO0)
+![Diagram](https://www.plantuml.com/plantuml/png/VP6nJiOm38HtFuL762hs3gWIb1LUmKsCY9J4bUqCVNje4KX_ex_h-UxpoPxCIRsL31HS5EUoPjcOOP5M8-c67qt35nc_QsHz4oqGfBfAlfsy_8gP5RXwybCGu8-CmtFF776kpego2nZPAMM3plQVxRUEQ6qfoG_vuU2yajCZtF5tg163CZbV0t2uhX02cprz_jHlogXigrJZonBzBMAoDTDsni74DUwl-WO0)
 
 Biểu đồ này minh họa cách các đối tượng giao tiếp trong quá trình ghi nhận đơn hàng của nhân viên.
 
@@ -81,7 +81,7 @@ Biểu đồ này minh họa cách các đối tượng giao tiếp trong quá t
 ---
 
 ## 1.5 Biểu đồ lớp (Class Diagram) cho "Record Purchase Orders"
-[Diagram](https://www.plantuml.com/plantuml/png/ZP71IWD138RlynGvhiY-m1waK2rugYXuZxD11p8JoMGAKdntEqjRg-EoNaBu-FF_2LbbGxKIsNd6dE6Xg7_3J5iTIJUY4VOEu3gNbnXiWftKUek60snFxPNxT7yvh2MP2ZFfFtsgQ8SSHZHQa7cbLhIuqt6JNcfxFmxmP1hIQqKKtra-Y7xIapKDKEiPFIEN0zkme4sduOwwYyorn1Xo3fBkZhwmdq_nP_KZsgMjH_Q53-pRhslofzZsTNr_C_SEDyD_pomesoFTYj9O8dy1)
+![Diagram](https://www.plantuml.com/plantuml/png/ZP71IWD138RlynGvhiY-m1waK2rugYXuZxD11p8JoMGAKdntEqjRg-EoNaBu-FF_2LbbGxKIsNd6dE6Xg7_3J5iTIJUY4VOEu3gNbnXiWftKUek60snFxPNxT7yvh2MP2ZFfFtsgQ8SSHZHQa7cbLhIuqt6JNcfxFmxmP1hIQqKKtra-Y7xIapKDKEiPFIEN0zkme4sduOwwYyorn1Xo3fBkZhwmdq_nP_KZsgMjH_Q53-pRhslofzZsTNr_C_SEDyD_pomesoFTYj9O8dy1)
 ### **Các lớp và mối quan hệ:**
 
 - **PurchaseOrderForm (Boundary)**
