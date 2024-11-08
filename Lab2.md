@@ -81,7 +81,7 @@ Biểu đồ này minh họa cách các đối tượng giao tiếp trong quá t
 ---
 
 ## 1.5 Biểu đồ lớp (Class Diagram) cho "Record Purchase Orders"
-[Diagram](http://www.plantuml.com/plantuml/png/ZP71IWD138RlynGvhiY-m1waK2rugYXuZxD11p8JoMGAKdntEqjRg-EoNaBu-FF_2LbbGxKIsNd6dE6Xg7_3J5iTIJUY4VOEu3gNbnXiWftKUek60snFxPNxT7yvh2MP2ZFfFtsgQ8SSHZHQa7cbLhIuqt6JNcfxFmxmP1hIQqKKtra-Y7xIapKDKEiPFIEN0zkme4sduOwwYyorn1Xo3fBkZhwmdq_nP_KZsgMjH_Q53-pRhslofzZsTNr_C_SEDyD_pomesoFTYj9O8dy1)
+[Diagram](https://www.plantuml.com/plantuml/png/ZP71IWD138RlynGvhiY-m1waK2rugYXuZxD11p8JoMGAKdntEqjRg-EoNaBu-FF_2LbbGxKIsNd6dE6Xg7_3J5iTIJUY4VOEu3gNbnXiWftKUek60snFxPNxT7yvh2MP2ZFfFtsgQ8SSHZHQa7cbLhIuqt6JNcfxFmxmP1hIQqKKtra-Y7xIapKDKEiPFIEN0zkme4sduOwwYyorn1Xo3fBkZhwmdq_nP_KZsgMjH_Q53-pRhslofzZsTNr_C_SEDyD_pomesoFTYj9O8dy1)
 ### **Các lớp và mối quan hệ:**
 
 - **PurchaseOrderForm (Boundary)**
