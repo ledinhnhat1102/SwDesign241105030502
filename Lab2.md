@@ -115,3 +115,149 @@ Biểu đồ này minh họa cách các đối tượng giao tiếp trong quá t
 ### **Quan hệ:**
 - **PurchaseOrderController** tương tác với **PurchaseOrderForm** (hướng 1 chiều từ Form sang Controller).
 - **PurchaseOrderController** quản lý **PurchaseOrder** và liên kết đến **CommissionEmployee** để tính hoa hồng nếu cần.
+
+
+# Mã nguồn Java cho mô phỏng ca sử dụng "Maintain Timecard"
+
+```java
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+// Lớp đại diện cho Timecard
+class Timecard {
+    private String employeeId;
+    private String date;
+    private int hoursWorked;
+
+    public Timecard(String employeeId, String date, int hoursWorked) {
+        this.employeeId = employeeId;
+        this.date = date;
+        this.hoursWorked = hoursWorked;
+    }
+
+    public String getEmployeeId() {
+        return employeeId;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public int getHoursWorked() {
+        return hoursWorked;
+    }
+
+    public void setHoursWorked(int hoursWorked) {
+        this.hoursWorked = hoursWorked;
+    }
+
+    public void displayInfo() {
+        System.out.println("Employee ID: " + employeeId + ", Date: " + date + ", Hours Worked: " + hoursWorked);
+    }
+}
+
+// Lớp quản lý các Timecard
+class TimecardManager {
+    private List<Timecard> timecards;
+
+    public TimecardManager() {
+        timecards = new ArrayList<>();
+    }
+
+    // Thêm timecard
+    public void addTimecard(String employeeId, String date, int hoursWorked) {
+        Timecard timecard = new Timecard(employeeId, date, hoursWorked);
+        timecards.add(timecard);
+        System.out.println("Timecard added for Employee ID: " + employeeId);
+    }
+
+    // Sửa timecard theo employeeId và date
+    public void editTimecard(String employeeId, String date, int newHoursWorked) {
+        for (Timecard timecard : timecards) {
+            if (timecard.getEmployeeId().equals(employeeId) && timecard.getDate().equals(date)) {
+                timecard.setHoursWorked(newHoursWorked);
+                System.out.println("Timecard updated for Employee ID: " + employeeId + " on " + date);
+                return;
+            }
+        }
+        System.out.println("Timecard not found for Employee ID: " + employeeId + " on " + date);
+    }
+
+    // Xóa timecard
+    public void deleteTimecard(String employeeId, String date) {
+        timecards.removeIf(tc -> tc.getEmployeeId().equals(employeeId) && tc.getDate().equals(date));
+        System.out.println("Timecard deleted for Employee ID: " + employeeId + " on " + date);
+    }
+
+    // Hiển thị tất cả timecards
+    public void displayTimecards() {
+        if (timecards.isEmpty()) {
+            System.out.println("No timecards available.");
+        } else {
+            for (Timecard timecard : timecards) {
+                timecard.displayInfo();
+            }
+        }
+    }
+}
+
+// Lớp Main để mô phỏng ca sử dụng "Maintain Timecard"
+public class Main {
+    public static void main(String[] args) {
+        TimecardManager manager = new TimecardManager();
+        Scanner scanner = new Scanner(System.in);
+        boolean exit = false;
+
+        while (!exit) {
+            System.out.println("\n--- Maintain Timecard Menu ---");
+            System.out.println("1. Add Timecard");
+            System.out.println("2. Edit Timecard");
+            System.out.println("3. Delete Timecard");
+            System.out.println("4. Display All Timecards");
+            System.out.println("5. Exit");
+            System.out.print("Choose an option: ");
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Đọc bỏ dòng xuống hàng
+
+            switch (choice) {
+                case 1:
+                    System.out.print("Enter Employee ID: ");
+                    String employeeId = scanner.nextLine();
+                    System.out.print("Enter Date (yyyy-mm-dd): ");
+                    String date = scanner.nextLine();
+                    System.out.print("Enter Hours Worked: ");
+                    int hoursWorked = scanner.nextInt();
+                    manager.addTimecard(employeeId, date, hoursWorked);
+                    break;
+                case 2:
+                    System.out.print("Enter Employee ID: ");
+                    employeeId = scanner.nextLine();
+                    System.out.print("Enter Date (yyyy-mm-dd): ");
+                    date = scanner.nextLine();
+                    System.out.print("Enter New Hours Worked: ");
+                    int newHoursWorked = scanner.nextInt();
+                    manager.editTimecard(employeeId, date, newHoursWorked);
+                    break;
+                case 3:
+                    System.out.print("Enter Employee ID: ");
+                    employeeId = scanner.nextLine();
+                    System.out.print("Enter Date (yyyy-mm-dd): ");
+                    date = scanner.nextLine();
+                    manager.deleteTimecard(employeeId, date);
+                    break;
+                case 4:
+                    manager.displayTimecards();
+                    break;
+                case 5:
+                    exit = true;
+                    break;
+                default:
+                    System.out.println("Invalid option. Please try again.");
+            }
+        }
+
+        scanner.close();
+    }
+}
+
