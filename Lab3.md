@@ -1,7 +1,7 @@
 
 # 1. Subsystem Context Diagrams
 
-## 1. Hệ Thống Ngân Hàng (BankSystem)
+## 1.1 Hệ Thống Ngân Hàng (BankSystem)
 
 ### **Mô Tả**
 Hệ thống Ngân Hàng chịu trách nhiệm xử lý các giao dịch tài chính trong tổ chức, đặc biệt là thanh toán lương cho nhân viên. Mỗi khi đến ngày thanh toán lương, hệ thống sẽ tự động chuyển tiền vào tài khoản của từng nhân viên. Ngoài ra, hệ thống cũng cho phép nạp tiền vào tài khoản ngân hàng của nhân viên thông qua các giao dịch từ hệ thống ngân hàng.
@@ -19,7 +19,7 @@ Hệ thống Ngân Hàng chịu trách nhiệm xử lý các giao dịch tài ch
 
 ---
 
-## 2. Dịch Vụ In (PrintService)
+## 1.2 Dịch Vụ In (PrintService)
 
 ### **Mô Tả**
 Dịch vụ In hỗ trợ việc tạo ra các báo cáo lương và các tài liệu liên quan, và cung cấp khả năng in các báo cáo khi cần thiết. Đây là một dịch vụ quan trọng giúp quản lý các báo cáo liên quan đến công việc quản lý nhân sự và lương của nhân viên.
@@ -36,7 +36,7 @@ Dịch vụ In hỗ trợ việc tạo ra các báo cáo lương và các tài l
 
 ---
 
-## 3. Cơ Sở Dữ Liệu Quản Lý Dự Án (ProjectManagementDatabase)
+## 1.3 Cơ Sở Dữ Liệu Quản Lý Dự Án (ProjectManagementDatabase)
 
 ### **Mô Tả**
 Hệ thống Cơ Sở Dữ Liệu Quản Lý Dự Án quản lý các hoạt động liên quan đến các dự án trong tổ chức. Hệ thống này bao gồm việc cập nhật, truy vấn thông tin dự án và theo dõi tiến độ của từng dự án.
