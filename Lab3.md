@@ -98,5 +98,6 @@ Hệ thống Cơ Sở Dữ Liệu Quản Lý Dự Án quản lý các hoạt đ�
 | PaymentMethod               | Business Services::Payment Integration   |
 | Timecard                    | Applications::Employee Activities        |
 | BankInformation             | Business Services::Bank Integration      |
-
+# 4. Architectural layers and their dependencies
+![Sơ Đồ Architectural](https://www.plantuml.com/plantuml/png/ZPB1IiD048Rl-nH3Jthf0tYGLkkX444eFKaEmpfPbpQpPMPMBEAxssWMab0ajy3Cz-N_XrsfeLXkZquFaKyes4AREFbtIIs1IIRdJkWF60WMBq9AR6WnCLHu9e6R_VPs0LyEu7Ml9B1b8sdGK-s-1-H3riYa2bKAqHTsH_8HFManF2OX6A-EDHiqXBM_85eSctLLyD_fCp86QebjZ7R1WWoYzz3Jfv4m7g4F0uF5gQ4HL9FiBGkD99Ue8NAek-yT-IpHplLV8svYo0FTz4omNDvVRmvta9NKNHzssBJn3EJ_leMVYdksr9pnctA5ERlZ8nN0hOZVkfVv0m00)
 
