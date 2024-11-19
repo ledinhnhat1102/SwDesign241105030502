@@ -23,6 +23,8 @@ Hệ thống Ngân Hàng chịu trách nhiệm xử lý các giao dịch tài ch
 
 ### **Mô Tả**
 Dịch vụ In hỗ trợ việc tạo ra các báo cáo lương và các tài liệu liên quan, và cung cấp khả năng in các báo cáo khi cần thiết. Đây là một dịch vụ quan trọng giúp quản lý các báo cáo liên quan đến công việc quản lý nhân sự và lương của nhân viên.
+### **Sơ Đồ**
+![Sơ Đồ PrintService](https://www.plantuml.com/plantuml/png/dP0n2y8m48Nt-nL79rs2hgM4WfERw2y8xLa3CIcNQnt4_sxRe92wcILvZ_Vb7bT7CIp3tG4qpiI89xPU3i4B1-U8yGaudNvspzG7biqMNW2J9BwQXl2u41VYqKxgDsxIZIMcnuAdMV-JoG1OjorsIkqBL6oxcoZzqNd74Zlon4Oe8YyVHHojWJnLgJOylC8LMbL39AqXirDKVslLvDjvfsy0)
 
 ### **Các Thành Phần**
 - **PrintController**: Điều khiển các yêu cầu tạo và in các báo cáo. Nó gọi các phương thức của dịch vụ in thực tế để hoàn tất việc in ấn.
