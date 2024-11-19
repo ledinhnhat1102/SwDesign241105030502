@@ -25,7 +25,6 @@ Hệ thống Ngân Hàng chịu trách nhiệm xử lý các giao dịch tài ch
 Dịch vụ In hỗ trợ việc tạo ra các báo cáo lương và các tài liệu liên quan, và cung cấp khả năng in các báo cáo khi cần thiết. Đây là một dịch vụ quan trọng giúp quản lý các báo cáo liên quan đến công việc quản lý nhân sự và lương của nhân viên.
 ### **Sơ Đồ**
 ![Sơ Đồ PrintService](https://www.plantuml.com/plantuml/png/dP0n2y8m48Nt-nL79rs2hgM4WfERw2y8xLa3CIcNQnt4_sxRe92wcILvZ_Vb7bT7CIp3tG4qpiI89xPU3i4B1-U8yGaudNvspzG7biqMNW2J9BwQXl2u41VYqKxgDsxIZIMcnuAdMV-JoG1OjorsIkqBL6oxcoZzqNd74Zlon4Oe8YyVHHojWJnLgJOylC8LMbL39AqXirDKVslLvDjvfsy0)
-
 ### **Các Thành Phần**
 - **PrintController**: Điều khiển các yêu cầu tạo và in các báo cáo. Nó gọi các phương thức của dịch vụ in thực tế để hoàn tất việc in ấn.
 - **IPrintService (Giao diện)**: Định nghĩa các phương thức cần thiết cho việc in báo cáo. Giao diện này giúp tạo sự nhất quán trong cách dịch vụ in được thực hiện trong hệ thống.
@@ -41,7 +40,8 @@ Dịch vụ In hỗ trợ việc tạo ra các báo cáo lương và các tài l
 
 ### **Mô Tả**
 Hệ thống Cơ Sở Dữ Liệu Quản Lý Dự Án quản lý các hoạt động liên quan đến các dự án trong tổ chức. Hệ thống này bao gồm việc cập nhật, truy vấn thông tin dự án và theo dõi tiến độ của từng dự án.
-
+### **Sơ Đồ**
+![Sơ Đồ ProjectManagementDatabase](https://www.plantuml.com/plantuml/png/hP6nZi8m38PtFuNLwMv8TBTMLLJfRhdX95x1jAOKfKcLk30WtfqMMJ0WEf79Jln_Vtwvpa99fi43D9vonasA1sxa9mP9qNjEU0QSpq21EjRNZq-u0FH1EEseOVpJ-__RqC11VabeIvbLFOqjoLrDMc29MYqy_S3xKG3FeOelQxyBDAdlzcASzcj1IdNEEAhbt14UUu8LLMNRU0eMrxXLDMLs3bxFc0LYt2DGpQ5TbdO5)
 ### **Các Thành Phần**
 - **ProjectController**: Quản lý các yêu cầu thay đổi và cập nhật thông tin dự án. Thành phần này có thể nhận yêu cầu từ người dùng để thay đổi thông tin của dự án.
 - **IProjectManagementDatabase (Giao diện)**: Định nghĩa các phương thức cần thiết để tương tác với cơ sở dữ liệu dự án, bao gồm việc thêm, cập nhật và truy vấn thông tin dự án.
