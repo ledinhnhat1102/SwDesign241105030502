@@ -146,5 +146,5 @@ Hệ thống **Payroll** được thiết kế để quản lý toàn bộ quy t
 #### **4.2. Nhập Thông Tin Giờ Làm Việc**
 ![Activity Diagram](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuG8pkApyCWulobCeopoyAayXB-FXhhK52kcP3tVFLSWvl21NeGp8R4-svhBo1ZAQSnLAYX8LKXxkNg-G0v8eLSXuk7jnWK8Ea6tDbPcceE62LSvUKw4a8pLFGICojLYJIq71okVOXbAWqE4jUUaA9Pb0wmylo5T8FhPGeVZXxld85bXpfUOKfofe-EM3zNc0N96dK08qkXjaylHCg9iHolDICjE0Viilu780ia4U1G00)
 ### **5. Component Diagram (Sơ đồ thành phần)**
-![Component Diagram](https:////www.plantuml.com/plantuml/png/RPB12e9048RlFiNWtLS8Y-ZKGSfEqM7KGPVMNTbTWuZUFOIXNGUF_lnyd_-mfG_emZpghBNZP0sP0Fd9MHF8T3byCe3xsVRAG8KzFPRFMeta1w8GemhVNgk9Ws-MmWxOFYDhFuS1hkHUgXMqVyf0PxLUPHUQh8ireJbYm0OziUVcoK6DZPQMcB4Z9cpWOE6dqw4eTlB_nIsuip4fkH3NDZQcS2wjTco0fP2RWYsDtEAzgv8yGaccMrx73m00)
+![Component Diagram](https://www.plantuml.com/plantuml/png/RPB12e9048RlFiNWtLS8Y-ZKGSfEqM7KGPVMNTbTWuZUFOIXNGUF_lnyd_-mfG_emZpghBNZP0sP0Fd9MHF8T3byCe3xsVRAG8KzFPRFMeta1w8GemhVNgk9Ws-MmWxOFYDhFuS1hkHUgXMqVyf0PxLUPHUQh8ireJbYm0OziUVcoK6DZPQMcB4Z9cpWOE6dqw4eTlB_nIsuip4fkH3NDZQcS2wjTco0fP2RWYsDtEAzgv8yGaccMrx73m00)
 
