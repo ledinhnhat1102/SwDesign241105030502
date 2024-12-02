@@ -130,6 +130,7 @@ Hệ thống **Payroll** được thiết kế để quản lý toàn bộ quy t
 
 ## **Sơ Đồ Các Hệ Thống Con (Subsystems)**
 ### **1. Use Case Diagram (Sơ đồ ca sử dụng)**
+![Use Case Diagram](https://www.plantuml.com/plantuml/png/PP31IiD054NtynMFxliBKX2XWfOQYhWTuoCPU7apPZALBiM5Mtz0iBeJ2kgoHLnCwN_aJon3oape9cJkFLpUlIFRoBfn5GcPDxg6mQJqxmnpvJzv0DB2MML8Bn0F_fLhrnyCv7-3VIbP5bWVt6dfVxW03Y6stNm7Q9m9uIpcqY8CjY_Rfu2qwvK9zeKk54TW4XmeLBjv1V9l5SptlyzvOC_Pk6QcAepy3LPWIjMk_npGxcktv2AWrmeVfd9XIPa8p_oAonvsAYbt91lSixKcwWVV-gM6VFyvYixGwBg9T1m6JAX_xnRjvf6JcJ9DQ8KuJ0h3uKbNFfLYnxwSzX7TxZ4YLTBxn3YBKFSuxjpfwPaZv3jNaVW7)
 ### **2. Sequence Diagrams (Sơ đồ tuần tự)**
 #### **2.1. Đăng Nhập (Login)**
 #### **2.2. Nhập Thông Tin Giờ Làm Việc**
