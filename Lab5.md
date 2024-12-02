@@ -129,6 +129,14 @@ Hệ thống **Payroll** được thiết kế để quản lý toàn bộ quy t
 ---
 
 ## **Sơ Đồ Các Hệ Thống Con (Subsystems)**
-
-Dựa trên mô tả các hệ thống con trên, sơ đồ các hệ thống con có dạng:
+### **1. Use Case Diagram (Sơ đồ ca sử dụng)**
+### **2. Sequence Diagrams (Sơ đồ tuần tự)**
+#### **2.1. Đăng Nhập (Login)**
+#### **2.2. Nhập Thông Tin Giờ Làm Việc**
+#### **2.3. Tính Toán Lương**
+### **3. Class Diagram (Sơ đồ lớp)**
+### **4. Activity Diagram (Sơ đồ hoạt động)**
+#### **4.1. Đăng Nhập (Login)**
+#### **4.2. Nhập Thông Tin Giờ Làm Việc**
+### **5. Component Diagram (Sơ đồ thành phần)**
 
