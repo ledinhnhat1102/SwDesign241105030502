@@ -133,11 +133,18 @@ Hệ thống **Payroll** được thiết kế để quản lý toàn bộ quy t
 ![Use Case Diagram](https://www.plantuml.com/plantuml/png/PP31IiD054NtynMFxliBKX2XWfOQYhWTuoCPU7apPZALBiM5Mtz0iBeJ2kgoHLnCwN_aJon3oape9cJkFLpUlIFRoBfn5GcPDxg6mQJqxmnpvJzv0DB2MML8Bn0F_fLhrnyCv7-3VIbP5bWVt6dfVxW03Y6stNm7Q9m9uIpcqY8CjY_Rfu2qwvK9zeKk54TW4XmeLBjv1V9l5SptlyzvOC_Pk6QcAepy3LPWIjMk_npGxcktv2AWrmeVfd9XIPa8p_oAonvsAYbt91lSixKcwWVV-gM6VFyvYixGwBg9T1m6JAX_xnRjvf6JcJ9DQ8KuJ0h3uKbNFfLYnxwSzX7TxZ4YLTBxn3YBKFSuxjpfwPaZv3jNaVW7)
 ### **2. Sequence Diagrams (Sơ đồ tuần tự)**
 #### **2.1. Đăng Nhập (Login)**
+![Login Sequence Diagram](https://www.plantuml.com/plantuml/png/PL6_IiGm7Dxp51ytwN2uEyW9WiA929uFa4jB6xHfJTBgAZSw-G325N4yK72n7Hno-1vv4vEUzLBT-llw_Vb-lqoKfbANsJMXJESIbogMf70GPxoWGcDqcYTSu9mcyGXKeHlzD6GTbZh5HImhpZOy3_pCG-OHrNHErORL3uJuO8mFjlxOnrbgcrM1qlqID8jHcIKAgjHjBYEo9JfLaEPqnxPTSUZKl8i4cWki7zSBzoawFnAIdRRlu8HJRjj51Yrfg1R9rwjjdpWYyo4IyiiV_mkUITiyexBjFQviywbnKthWpjJC6ThsZGt3_-mx3JI3ojYPfMOfKZ1VQc_cm1UDkMrglXiUmldvEpgh4x-9w48V-btcfix3NcGIYyW__JS0)
 #### **2.2. Nhập Thông Tin Giờ Làm Việc**
+![Nhập Thông Tin Giờ Làm Việc](https://www.plantuml.com/plantuml/png/TP8nJiCm58Ptd-9NzrwW0-e0WW6XIlG2hcib5eaJOYSI8s9WO6H6f6AkO62g1uP8lOTlmdEhH4gKRCwlzttljvMbiRomPPemBcnMu2hDa-n9IfPJh8JAkRQOhLKgJIobnOf7SWPkq4MKJ4xVow9IOW2Smm5poItVS7CURJyOQ-jWVj7VY0NkOd_Ovx1nywiZMAKHAUy-a3Hrolh3H0_Na-3QkxqQvr7HyLMm8KMchXqPRey_vPIWgJE8umx6kqzilVj64fmbw_ZvUAqLtUjB8_RkNU717_ui7akAa9os5QGQwJNoGEiYK9LtprEQFX4StOClS4DrNpGi5NbhBxbfTbaurpg620bRIhqDlyy_)
 #### **2.3. Tính Toán Lương**
+![Tính Toán Lương](https://www.plantuml.com/plantuml/png/bPEnJlCm58NtFCLHvxyly0-e4aXaOAX25qOtZHAhgLCIkr96nC30p8YW85IfgA83KpmmMEfx-4suXIPgL2F1aiZ7ztmvlhxf5PBbKarIZuKooz7nWmvO0J_mfhJ1GpvbGgBJPsMUfIdwB8w-2dR2TkskF8_o6GzRnJkfNJ_WawX8eaYs78tgz9mmoOQi-2wj5vxd1-WUxIV3VroOfK9eguM2D2kHG6PcBf1krfkvYBtzOlAsWvBzrEeLH_aRIEqYpa5y8ftPwgN4oEetfDpg6uMONlT8pUC4iwqIUWSsGjN78yGWLoLcn167Negd5mmYCK-29BCKNkFiEXCHpbRFnDDNVuxbQjMn4Z52IZVz0UVeKnsnwOzCp3jX91SO9wGeoDpgrt-qiLbR_K3ThZtk5Ev3rLU5eTLtA9JZqjgJqoQDRVKXSQb8s0s0Stu8uGVazEcRru8YMtsBePbd2EdHU7gH66t_k4y0)
 ### **3. Class Diagram (Sơ đồ lớp)**
+![Class Diagram](https://www.plantuml.com/plantuml/png/ZP7FIiD04CRl-nH3Jehq1NAGWXxq9bOVO9iTaiNPdR1_B4Ky-nI2zLxqR8-1laVVn7LhPGCzU1cIRtxvlfd9r0VfGZGa6fBUmxr71qy2O09QrQ1joCynoLOQh64MdBPj5llqmOAT6ecEgQJEWBZLzkHKF8lVY3jjq7U8uKWEcfvuYNXTQ4g6v7YPQdvDYGzN79slGN6S4-QKHqdw1yoTCkr6BXqJ_JFBIv9kMJYdU5In2Pgj7ycIY1VIDZYUev7KH981PzcfdEGMUtR7bZPiGrTi63X8kc0VHiujMdG9sTliZVFVcapEYvlMKDbkzxNkeTMxpIlGy6OgyTVFzE4cYLMxpGTG8byYqFPpkx9j9Gxzn1wcJcZV3UyMmh1kEfWFAuOcbKfCqQfeI7m3)
 ### **4. Activity Diagram (Sơ đồ hoạt động)**
 #### **4.1. Đăng Nhập (Login)**
+![Activity Diagram](https://www.plantuml.com/plantuml/png/7OwXheCm64Pzd-AJy0eWBl8g56QIZ4ARmD-cBLkc4OWfrEoIwRcf8U55-YOhDSsNzEJyfx2kDcuSUXO7oqhXls-DqN93zS1nsPxGjRLNPPgSoHP99ROFTN2I8FpwqkZzEl-bS88JaXEtAGEooemtdAChADI1pd3XNQZB6UyjHrAgYFvBlquKF--7x26nB_iKRb2C2JWriWs5IhCYx2Ft1m00)
 #### **4.2. Nhập Thông Tin Giờ Làm Việc**
+![Activity Diagram](https://www.plantuml.com/plantuml/png/SoWkIImgAStDuG8pkApyCWulobCeopoyAayXB-FXhhK52kcP3tVFLSWvl21NeGp8R4-svhBo1ZAQSnLAYX8LKXxkNg-G0v8eLSXuk7jnWK8Ea6tDbPcceE62LSvUKw4a8pLFGICojLYJIq71okVOXbAWqE4jUUaA9Pb0wmylo5T8FhPGeVZXxld85bXpfUOKfofe-EM3zNc0N96dK08qkXjaylHCg9iHolDICjE0Viilu780ia4U1G00)
 ### **5. Component Diagram (Sơ đồ thành phần)**
+![Component Diagram](https:////www.plantuml.com/plantuml/png/RPB12e9048RlFiNWtLS8Y-ZKGSfEqM7KGPVMNTbTWuZUFOIXNGUF_lnyd_-mfG_emZpghBNZP0sP0Fd9MHF8T3byCe3xsVRAG8KzFPRFMeta1w8GemhVNgk9Ws-MmWxOFYDhFuS1hkHUgXMqVyf0PxLUPHUQh8ireJbYm0OziUVcoK6DZPQMcB4Z9cpWOE6dqw4eTlB_nIsuip4fkH3NDZQcS2wjTco0fP2RWYsDtEAzgv8yGaccMrx73m00)
 
