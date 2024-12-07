@@ -17,9 +17,9 @@
 - `BankTransaction.submit()`
 
 #### **Biểu đồ lớp (Class Diagram)**:
-```plantuml
+
 ![Diagram](http://www.plantuml.com/plantuml/png/PP1BJiGm343tEOMNWsWlq0KQiMCpGXekuAO6gedZAd6GAiJTQPacYa9MYJ_FBpv7nQ29dR4EOuHdzBVh6fKOlWrivn4cMYJEUdh5rNwIlNL_HI_-NGAZpk8V1lYIUJ8_feAy1VGHxPul91i8bKwo373LCFkF3f0bUHrWaZGwwY18qYrnIPnhClsEY6dapUNVo2ntpEeRy14aNfoiHBjyvXT6-ws26hVu1PbonprSgOuKQbgrmxv_QhTXclTUK_HDlkJEMiYSoK-9tIy0)
-```
+
 
 #### **Biểu đồ trạng thái (State Diagram)**:
 ```plantuml
