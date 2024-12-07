@@ -1,175 +1,84 @@
-
 # Thiết Kế Lớp - Hệ Thống Payroll System
 
-## 1. BankSystem::deposit
+### Ví dụ 1: Maintain Timecard
+### 1. **BankSystem::deposit**
 
-### **Phân tích chi tiết**
+#### **Xác định lớp và thuộc tính**:
+- `BankSystem`: Đại diện hệ thống ngân hàng.
+- `BankTransaction`: Quản lý giao dịch.
+- `Paycheck`: Đại diện bảng lương, chứa số tiền và thông tin nhân viên.
+- `BankInformation`: Thông tin ngân hàng (tên, số định tuyến).
 
-#### **Lớp và thuộc tính**:
-- **BankSystem**: Đại diện hệ thống ngân hàng.
-- **BankTransaction**: Quản lý giao dịch.
-- **Paycheck**: Đại diện bảng lương, chứa số tiền và thông tin nhân viên.
-- **BankInformation**: Thông tin ngân hàng (tên, số định tuyến).
-
-#### **Phương thức (operations)**:
+#### **Xác định phương thức (operations)**:
 - `BankSystem.deposit(Paycheck, BankInformation)`
 - `BankTransaction.create(op, amount, routingNum)`
 - `BankTransaction.submit()`
 
 #### **Biểu đồ lớp (Class Diagram)**:
-
-![Diagram](http://www.plantuml.com/plantuml/png/PP1BJiGm343tEOMNWsWlq0KQiMCpGXekuAO6gedZAd6GAiJTQPacYa9MYJ_FBpv7nQ29dR4EOuHdzBVh6fKOlWrivn4cMYJEUdh5rNwIlNL_HI_-NGAZpk8V1lYIUJ8_feAy1VGHxPul91i8bKwo373LCFkF3f0bUHrWaZGwwY18qYrnIPnhClsEY6dapUNVo2ntpEeRy14aNfoiHBjyvXT6-ws26hVu1PbonprSgOuKQbgrmxv_QhTXclTUK_HDlkJEMiYSoK-9tIy0)
-
+![BankSystem Class Diagram](https://www.planttext.com/api/plantuml/png/T951Ri8m44NtFiKiGKeka0L2NLHYWoh11IREj8s8FP5dl8WG9sF1aRW22Ks20TNBxpzl_hUlvyjQ58D6rnZRe0Xye3_iEb5oS3HmFnMrBBKklh2plsGFsTsqyTyS76hDVcbE9XdV1_I2ThYP6JOGAYsuBM2deVO_6Q3ZwBM0puPHCmWSjTUtqKsMvJWhiNJz-cJBb6J4vy-iKIFNDjmHRQe9-1mpAJ1pobxVegDvuaz-P2iffBJajV9yzTQ-W2WavbKUh7E50jh0bkG_uslKaRacNms_TWC00F__0m00)
 
 #### **Biểu đồ trạng thái (State Diagram)**:
-```plantuml
-@startuml
-state "Khởi tạo" as Init
-state "Đang xử lý" as Processing
-state "Hoàn tất" as Completed
-
-Init --> Processing: Tạo giao dịch
-Processing --> Completed: Gửi giao dịch
-@enduml
-```
+- Trạng thái của giao dịch từ *Khởi tạo* → *Đang xử lý* → *Hoàn tất*.
+![BankSystem State Diagram](https://www.planttext.com/api/plantuml/png/T951Ri8m44NtFiKiGKeka0L2NLHYWoh11IREj8s8FP5dl8WG9sF1aRW22Ks20TNBxpzl_hUlvyjQ58D6rnZRe0Xye3_iEb5oS3HmFnMrBBKklh2plsGFsTsqyTyS76hDVcbE9XdV1_I2ThYP6JOGAYsuBM2deVO_6Q3ZwBM0puPHCmWSjTUtqKsMvJWhiNJz-cJBb6J4vy-iKIFNDjmHRQe9-1mpAJ1pobxVegDvuaz-P2iffBJajV9yzTQ-W2WavbKUh7E50jh0bkG_uslKaRacNms_TWC00F__0m00)
 
 ---
 
-## 2. PrintService::print
+### 2. **PrintService::print**
 
-### **Phân tích chi tiết**
+#### **Xác định lớp và thuộc tính**:
+- `PrintService`: Quản lý việc in.
+- `PaycheckPrinterImage`: Tạo hình ảnh in từ bảng lương.
+- `PrinterInterface`: Kết nối với máy in.
+- `Employee`: Thông tin nhân viên.
 
-#### **Lớp và thuộc tính**:
-- **PrintService**: Quản lý việc in.
-- **PaycheckPrinterImage**: Tạo hình ảnh in từ bảng lương.
-- **PrinterInterface**: Kết nối với máy in.
-- **Employee**: Thông tin nhân viên.
-
-#### **Phương thức (operations)**:
+#### **Xác định phương thức (operations)**:
 - `PrintService.print(Paycheck, String)`
 - `PaycheckPrinterImage.buildPrintImage(fromPaycheck)`
 
 #### **Biểu đồ lớp (Class Diagram)**:
-```plantuml
-@startuml
-class PrintService {
-    + print(Paycheck, printerName: String): void
-}
-
-class PaycheckPrinterImage {
-    + buildPrintImage(fromPaycheck: Paycheck): Image
-}
-
-class Paycheck {
-    - amount: double
-    - employeeInfo: String
-}
-
-PrintService --> PaycheckPrinterImage
-PaycheckPrinterImage --> Paycheck
-@enduml
-```
+![PrintService Class Diagram](https://www.planttext.com/api/plantuml/png/T951Ri8m44NtFiKiGKeka0L2NLHYWoh11IREj8s8FP5dl8WG9sF1aRW22Ks20TNBxpzl_hUlvyjQ58D6rnZRe0Xye3_iEb5oS3HmFnMrBBKklh2plsGFsTsqyTyS76hDVcbE9XdV1_I2ThYP6JOGAYsuBM2deVO_6Q3ZwBM0puPHCmWSjTUtqKsMvJWhiNJz-cJBb6J4vy-iKIFNDjmHRQe9-1mpAJ1pobxVegDvuaz-P2iffBJajV9yzTQ-W2WavbKUh7E50jh0bkG_uslKaRacNms_TWC00F__0m00)
 
 #### **Biểu đồ trạng thái (State Diagram)**:
-```plantuml
-@startuml
-state "Chuẩn bị in" as Prepare
-state "Đang in" as Printing
-state "Hoàn thành" as Done
-
-Prepare --> Printing: Bắt đầu in
-Printing --> Done: Hoàn tất in
-@enduml
-```
+- Trạng thái in: *Chuẩn bị in* → *Đang in* → *Hoàn thành*.
+![PrintService State Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XUGKPAge1HGb5gGM9IPbwwaa5Yi0E8XP3BpIX0IG0vCnZa_jo0djIGr1Ipbaf-NoiKLhHMheAjh1p41H41vG6qALWh1gNaf2YNv2WKWVceH5qGSf0Aa6wZ0BJClipW38W-qayi1g07aIW00003__mC0)
 
 ---
 
-## 3. ProjectManagementDatabase::getChargeNumbers
+### 3. **ProjectManagementDatabase::getChargeNumbers**
 
-### **Phân tích chi tiết**
+#### **Xác định lớp và thuộc tính**:
+- `ProjectManagementDatabase`: Đại diện hệ thống cơ sở dữ liệu.
+- `ChargeNumList`: Danh sách số tính phí.
+- `ChargeNum`: Đối tượng số tính phí, chứa tên dự án và giá trị.
 
-#### **Lớp và thuộc tính**:
-- **ProjectManagementDatabase**: Đại diện hệ thống cơ sở dữ liệu.
-- **ChargeNumList**: Danh sách số tính phí.
-- **ChargeNum**: Đối tượng số tính phí, chứa tên dự án và giá trị.
-
-#### **Phương thức (operations)**:
-- `getChargeNumbers(String): ChargeNumList`
+#### **Xác định phương thức (operations)**:
+- `getChargeNumbers(String)`: Truy vấn danh sách số tính phí.
 - `ChargeNumList.add(theChargeNum)`
 
 #### **Biểu đồ lớp (Class Diagram)**:
-```plantuml
-@startuml
-class ProjectManagementDatabase {
-    + getChargeNumbers(query: String): ChargeNumList
-}
-
-class ChargeNumList {
-    + add(chargeNum: ChargeNum): void
-}
-
-class ChargeNum {
-    - projectName: String
-    - chargeValue: double
-}
-
-ProjectManagementDatabase --> ChargeNumList
-ChargeNumList --> ChargeNum
-@enduml
-```
+![ProjectManagementDatabase Class Diagram](https://www.planttext.com/api/plantuml/png/T51B2i8m4Dtd55dQHI_GXHGKGT0YU89fCiHAaafcuaOycGkFv1MiDIrMT9RlEpEFsxqaXi3HMQ4i4CbTQ8-eU0iU33hql0I66WZbHSX-3FBY0C5W5LsDWMQdjsMj2xddq7YJ5N9KR1fYSHKfVGAFYQ3rJ0tCXpVxOKocNARM2XmElOavWuqTjh8jzDN_Jyhp-TTAXGp8CNWIKtoYx5IgzGnD9olHwzVtdW000F__0m00)
 
 #### **Biểu đồ trạng thái (State Diagram)**:
-```plantuml
-@startuml
-state "Rỗng" as Empty
-state "Đang cập nhật" as Updating
-state "Hoàn tất" as Complete
-
-Empty --> Updating: Thêm dữ liệu
-Updating --> Complete: Hoàn tất danh sách
-@enduml
-```
+- Trạng thái danh sách số: *Rỗng* → *Đang cập nhật* → *Hoàn tất*.
+![ChargeNumber State Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XUGKPAgeEIQMr1IgQIGMAm0Pi64GmjI4aioyzB1CZ0EJD8vFxSW9xKaDGKi2-TnSKLhnIhewjf1ZGAJO3xC00Kh1SUK58NaZCIYz5I5lDBSfDIYOYwuB4Wft3IWMhVClCpY38LIa7mgbqDgNWh8uG00003__mC0)
 
 ---
 
-## 4. ProjectManagementDatabase::initialize
+### 4. **ProjectManagementDatabase::initialize**
 
-### **Phân tích chi tiết**
+#### **Xác định lớp và thuộc tính**:
+- `DBChargeNumbers`: Kết nối cơ sở dữ liệu.
+- `DriverManager`: Quản lý kết nối.
 
-#### **Lớp và thuộc tính**:
-- **DBChargeNumbers**: Kết nối cơ sở dữ liệu.
-- **DriverManager**: Quản lý kết nối.
-
-#### **Phương thức (operations)**:
+#### **Xác định phương thức (operations)**:
 - `initialize()`: Thiết lập kết nối.
-- `getConnection(url, user, pass): Connection`
+- `getConnection(url, user, pass)`: Lấy kết nối đến cơ sở dữ liệu.
 
 #### **Biểu đồ lớp (Class Diagram)**:
-```plantuml
-@startuml
-class DBChargeNumbers {
-    + initialize(): void
-}
-
-class DriverManager {
-    + getConnection(url: String, user: String, pass: String): Connection
-}
-
-DBChargeNumbers --> DriverManager
-@enduml
-```
+![Database Connection Class Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3bToJc9niOABatD6Ob5wgbzfRb9gKR52DPS266JcPPPa9kPaLgLgQ7BLSi5K5sMMfHRv9kObfgSMmTMcfvOuv-VbfIQNPERdQPGMvLWf19SKPUQbwoYK5gSM8NW5G3DWFB2fwBRhwjgXsM45CgAOoo4rBmNaQ000003__mC0)
 
 #### **Biểu đồ trạng thái (State Diagram)**:
-```plantuml
-@startuml
-state "Chưa kết nối" as Disconnected
-state "Đang kết nối" as Connecting
-state "Kết nối thành công" as Connected
-
-Disconnected --> Connecting: Thiết lập kết nối
-Connecting --> Connected: Kết nối thành công
-@enduml
-```
-
----
+- Trạng thái kết nối: *Chưa kết nối* → *Đang kết nối* → *Kết nối thành công*.
+![Database State Diagram](https://www.planttext.com/api/plantuml/png/UhzxlqDnIM9HIMbk3XUGKPAgeEIIMPoSdvUNcboIcgAaa5YiW2m0K-GC4SZCImShGN3H542DWFEukAArOXLqTUrGJKNcW6KH1YfOAJWdvkGePEPbbcGcvcHMfN8XIIAf1UgqWklBprCeBarEJYqkJYlDuN98pKi1-H00003__mC0)
+"""
 
